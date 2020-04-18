@@ -8,8 +8,10 @@
 #include <mpxx/msgpack.hpp>
 #include <mpxx/tuple_utils.hpp>
 #include <mpxx/visitors.hpp>
+#include <mpxx/msgpack_visitor.hpp>
 #include <mpxx/mstruct.hpp>
 #include <mpxx/define.hpp>
+#include <mpxx/macros/enum.hpp>
 
 namespace mpxx {
 

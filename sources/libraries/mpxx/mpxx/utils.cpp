@@ -1,6 +1,8 @@
 #include <stdlib.h>
 
+#if defined(MPXX_HAVE_DEMANGLER)
 #include <cxxabi.h>
+#endif
 
 #include <mpxx/utils.hpp>
 
@@ -9,6 +11,7 @@ namespace mpxx {
 std::string
 demangle_type_name(const std::string& mangled)
 {
+#if defined(MPXX_HAVE_DEMANGLER)
     char* buffer;
     int status;
 
@@ -24,6 +27,9 @@ demangle_type_name(const std::string& mangled)
     }
 
     return std::string("unsupported");
+#else
+    return mangled;
+#endif
 }
 
 } // namespace mpxx
