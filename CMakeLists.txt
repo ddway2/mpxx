@@ -9,7 +9,7 @@ project(MPXX)
 # check for demangling support
 try_compile(DEMANGLER_FOUND
     ${CMAKE_BINARY_DIR}
-    cmake/check_demangle.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/check_demangle.cpp
 )
 
 add_library(mpxx
