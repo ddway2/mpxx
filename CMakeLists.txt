@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.6 FATAL_ERROR)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+#set(CMAKE_CXX_STANDARD 14)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(BUILD_SAMPLE OFF)
 
 project(MPXX)
 
@@ -27,10 +29,13 @@ target_include_directories(mpxx
     PUBLIC generated
 )
 
-add_executable(mstruct_example
-    samples/mstruct_example.cpp
-)
+if(BUILD_SAMPLE)
+    add_executable(mstruct_example
+        samples/mstruct_example.cpp
+    )
 
-target_link_libraries(mstruct_example
-    PRIVATE mpxx
-)
+    target_link_libraries(mstruct_example
+        PRIVATE mpxx
+    )
+endif()
+
