@@ -24,6 +24,10 @@ if(DEMANGLER_FOUND)
     )
 endif()
 
+target_compile_options(mpxx
+    PUBLIC $<$<CXX_COMPILER_ID:MSVC>:/wd4003>
+)
+
 target_include_directories(mpxx
     PUBLIC sources/include/mpxx
     PUBLIC generated
